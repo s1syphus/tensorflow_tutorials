@@ -26,3 +26,14 @@ def train(
         # Calculate loss.
         loss = cifar10_model.loss(logits, labels)
 
+        # Build a Graph that trains the model with one batch of examples and
+        # updates the model parameters.
+        train_op = cifar10_model.train_step(loss, global_step)
+
+
+
+def train_step():
+    with tf.Graph().as_default():
+        global_step = tf.contrib.framework.get_or_create_global_step()
+        # Get images and labels for CIFAR-10.
+        images, labels = cifar10_input.distorted_inputs()

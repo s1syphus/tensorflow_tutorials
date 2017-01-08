@@ -19,8 +19,6 @@ if __name__ == '__main__':
     ap.add_argument("-n", "--training_steps", default=2000, help="Number of training steps")
     ap.add_argument("-r", "--learning_rate", default=0.01, help="Learning Rate")
 
-    # Add in some online preprocessing stuff at some point
-    # eg. random_flip, random_scale, etc
     args = vars(ap.parse_args())
 
     cifar10_input.maybe_download_and_extract(args["data_dir"])

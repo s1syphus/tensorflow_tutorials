@@ -154,7 +154,7 @@ def distorted_inputs(data_dir, batch_size):
                                            shuffle=True)
 
 
-def input(eval_data, data_dir, batch_size):
+def inputs(eval_data, data_dir, batch_size=128):
     if not eval_data:
         filenames = [os.path.join(data_dir, 'data_batch_%d.bin' % i)
                      for i in xrange(1, 6)]

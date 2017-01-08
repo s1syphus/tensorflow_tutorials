@@ -3,9 +3,7 @@ This will contain the model data
 """
 
 import argparse
-import tensorflow as tf
-import cifar10_input
-import cifar10_train
+from cifar10_basic import cifar10_train
 
 
 if __name__ == '__main__':
@@ -21,6 +19,9 @@ if __name__ == '__main__':
 
     args = vars(ap.parse_args())
 
-    cifar10_input.maybe_download_and_extract(args["data_dir"])
-    cifar10_train.train()
+    if args["evaluate"]:
+        cifar10_eval.evaluate(True)
+    else:
+        cifar10_input.maybe_download_and_extract(args["data_dir"])
+        cifar10_train.train()
 

@@ -91,3 +91,5 @@ ENV/
 .ropeproject
 .gitignore
 .idea/
+
+cifar10_generic_images/data
